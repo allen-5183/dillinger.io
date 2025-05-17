@@ -161,6 +161,36 @@ def hello_world():
 例如:
 `![替代文本](圖片URL)`
 
+### 匯入
+
+1. 匯入文件
+   `@import "./Markdown/XXX.md"`
+2. 匯入圖片
+   `@import "./pic/XXX.png"`
+
+3. 匯入流程
+   `@import "./pic/XXX.pauml"`
+
+4. 匯入表格
+   `@import "./csv/XXX.csv"`
+
+**支持的文件類型如下:**
+- `.jpeg(.jpg)`, `gif`, `png`, `apng`, `.svg`, `bmp` 文件將會直接被當作 `markdown` 圖片被引用。
+- `.csv` 文件將會被轉换成 `markdown` 表格。
+- `.mermaid` 將會被 `mermaid` 渲染。
+- `.dot` 文件將會被 `viz.js (graphviz)` 渲染。
+- `.plantuml(.puml)` 文件將會被 `PlantUML` 渲染。
+- `.htm1` 將會直接被引入。
+- `.js` 將會被引用為 `<script src="你的 js 文件"></script>`
+- `.less` 和 `.css` 用用為 `style` 目前 `less` 只支持本地文件。 `.css` 文件將會被引用為 `<link rel="stylesheet" href="你的 css 文件">`
+- `pdf` 文件都會被 `pdf2svg` 轉换為 `svg` 然後被引用。
+- `markdown` 將會被分析處理然後被引用。
+- 其他所有的文件都將被視為代碼塊。
+
+
+
+
+
 ## 工具
 
 多平臺(Windows、Mac、Linux)
